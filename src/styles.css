@@ -15,42 +15,41 @@ body {
   background-color: red;
 }
 
-body{
+body {
   margin: 12px;
   background-color: black;
   color: white;
 }
-header{
-  color:  orange;
+header {
+  color: orange;
   margin: 20px;
   font-size: 30px;
   text-align: center;
 }
 
-section{
+section {
   margin: 20px;
   font-size: 20px;
   padding: 20px;
 }
 
-section h2{
+section h2 {
   font-size: 30px;
 }
-#pizza{
+#pizza {
   margin: 20px;
   font-size: 20px;
-  color:greenyellow
+  color: greenyellow;
 }
 
-#pasta{
+#pasta {
   margin: 20px;
   font-size: 20px;
-  color:powderblue
+  color: powderblue;
 }
 
-#starters{
+#starters {
   margin: 20px;
   font-size: 20px;
-  color:yellow
+  color: yellow;
 }
-
