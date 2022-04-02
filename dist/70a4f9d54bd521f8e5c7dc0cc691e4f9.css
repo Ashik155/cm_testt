@@ -30,9 +30,27 @@ header{
 section{
   margin: 20px;
   font-size: 20px;
+  padding: 20px;
 }
 
 section h2{
   font-size: 30px;
-
 }
+#pizza{
+  margin: 20px;
+  font-size: 20px;
+  color:greenyellow
+}
+
+#pasta{
+  margin: 20px;
+  font-size: 20px;
+  color:powderblue
+}
+
+#starters{
+  margin: 20px;
+  font-size: 20px;
+  color:yellow
+}
+
