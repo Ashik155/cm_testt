@@ -1,8 +1,6 @@
-What We can do further in this app ?? 
+<h1> What We can do further in this app ??  <h1>
 
-There are few things We can do with this app.
-
-For the FrontEnd Part...
+<h2> FRONT END PART </h2>
 
 1.  We can Use Some FrontEnd Libraries such as React, Vue.js, Next.js for better UI handling and rich customer experience with advanced features including api calling and all.
 
@@ -14,7 +12,7 @@ For the FrontEnd Part...
     -  ASK CHEF
 4. Umm, will add Customization options for the items as well. 
 
-BACKEND PART:
+<h2>BACKEND PART </h2>:
 
 1. Security concern due to everything is available in the client side.
    Better Approach : Having a API or Microservice Based Architechture
@@ -24,9 +22,9 @@ BACKEND PART:
 3. Grabbing Additional Detail
     If allowed, then I would also considering grabing few personal details for both business and better servig experience. 
      By getting 
-        - email Id
-        - name
-        - how many persons are there
+    -    email Id
+    - name
+    - how many persons are there
     I will make some data analysis for the better business strategy
     Also, ofc, our chef or waitier can customized order according to name of the person. 
 
