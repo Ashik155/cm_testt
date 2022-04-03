@@ -5,15 +5,9 @@ const sortingObject = require("./sortingObject");
 const menuItems = menu.items;
 
 //first I Will be filtring out the items based on type and then sorting using the hellper function SortMe
-const pizza = menuItems
-  .filter((item) => item.type === "pizza")
-  .sort((a, b) => a.menuOrder - b.menuOrder);
-const starters = menuItems
-  .filter((item) => item.type === "starters")
-  .sort((a, b) => a.menuOrder - b.menuOrder);
-const pastas = menuItems
-  .filter((item) => item.type === "pasta")
-  .sort((a, b) => a.menuOrder - b.menuOrder);
+const pizza = sortingObject(menuItems, "pizza");
+const starters = sortingObject(menuItems, "starters");
+const pastas = sortingObject(menuItems, "pasta");
 
 //Grabing the DOM FOR THE STARTER
 const startersContainer = document.getElementById("starters");
@@ -41,7 +35,7 @@ if (checkbox.checked) {
 }
 checkbox.addEventListener("change", (e) => {
   if (checkbox.checked) {
-    renderSpicyList(pizza);
+    renderSpicyList(pizzaList, pizza, pizzaContainer);
   } else {
     renderListOnly(pizzaList, pizza, pizzaContainer);
   }

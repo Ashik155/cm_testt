@@ -1,1 +1,1 @@
-{"dependencies":[],"generated":{"js":""},"hash":"32981a13284db7a021131df49e6cd203"}
+{"dependencies":[],"generated":{"js":"const sortingObject = (Object, key)=>{\n    return Object\n    .filter((item) => item.type === key)\n    .sort((a, b) => a.menuOrder - b.menuOrder);\n}\n\nmodule.exports = sortingObject;"},"hash":"65f361225c0f6e00f2b4678bfd136c5d"}

@@ -68,7 +68,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({7:[function(require,module,exports) {
+})({8:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -99,7 +99,7 @@ function getBaseURL(url) {
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 
-},{}],5:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -131,13 +131,13 @@ function reloadCSS() {
 
 module.exports = reloadCSS;
 
-},{"./bundle-url":7}],3:[function(require,module,exports) {
+},{"./bundle-url":8}],3:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"./../assets/spicy.svg":["572d78da2341c14fc7735da8aee8ee93.svg",6],"_css_loader":5}],4:[function(require,module,exports) {
+},{"./../assets/spicy.svg":["572d78da2341c14fc7735da8aee8ee93.svg",7],"_css_loader":6}],4:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -251,7 +251,7 @@ exports.default = {
     menuOrder: 0
   }]
 };
-},{}],8:[function(require,module,exports) {
+},{}],5:[function(require,module,exports) {
 const renderHTML = (item) => {
   var listItem = document.createElement("li");
   if (item.spicy) {
@@ -261,6 +261,8 @@ const renderHTML = (item) => {
   }
   return listItem;
 };
+
+
 const renderListOnly = (pizzaList, pizza, pizzaContainer) => {
   pizzaList.innerHTML = "";
   pizza.forEach((item) => {
@@ -289,7 +291,13 @@ module.exports = {
 };
 
 },{}],9:[function(require,module,exports) {
+const sortingObject = (Object, key)=>{
+    return Object
+    .filter((item) => item.type === key)
+    .sort((a, b) => a.menuOrder - b.menuOrder);
+}
 
+module.exports = sortingObject;
 },{}],2:[function(require,module,exports) {
 "use strict";
 
@@ -306,9 +314,9 @@ const sortingObject = require("./sortingObject");
 const menuItems = _menu2.default.items;
 
 //first I Will be filtring out the items based on type and then sorting using the hellper function SortMe
-const pizza = menuItems.filter(item => item.type === "pizza").sort((a, b) => a.menuOrder - b.menuOrder);
-const starters = menuItems.filter(item => item.type === "starters").sort((a, b) => a.menuOrder - b.menuOrder);
-const pastas = menuItems.filter(item => item.type === "pasta").sort((a, b) => a.menuOrder - b.menuOrder);
+const pizza = sortingObject(menuItems, "pizza");
+const starters = sortingObject(menuItems, "starters");
+const pastas = sortingObject(menuItems, "pasta");
 
 //Grabing the DOM FOR THE STARTER
 const startersContainer = document.getElementById("starters");
@@ -336,12 +344,12 @@ if (checkbox.checked) {
 }
 checkbox.addEventListener("change", e => {
   if (checkbox.checked) {
-    renderSpicyList(pizza);
+    renderSpicyList(pizzaList, pizza, pizzaContainer);
   } else {
     renderListOnly(pizzaList, pizza, pizzaContainer);
   }
 });
-},{"./styles.css":3,"./menu":4,"./renderHtml":8,"./sortingObject":9}],0:[function(require,module,exports) {
+},{"./styles.css":3,"./menu":4,"./renderHtml":5,"./sortingObject":9}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module() {
@@ -359,7 +367,7 @@ function Module() {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:63516/');
+  var ws = new WebSocket('ws://localhost:64171/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 

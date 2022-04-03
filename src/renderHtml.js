@@ -7,6 +7,8 @@ const renderHTML = (item) => {
   }
   return listItem;
 };
+
+
 const renderListOnly = (pizzaList, pizza, pizzaContainer) => {
   pizzaList.innerHTML = "";
   pizza.forEach((item) => {
